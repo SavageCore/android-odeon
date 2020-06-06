@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  ~ Copyright 2018 Thibault Seisel
+  ~ Copyright 2020 Thibault Seisel
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -53,15 +53,14 @@
 
         <TextView
             android:id="@+id/subtitle"
+            style="@style/Text.Odeon.Subtitle1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginEnd="@dimen/core_horizontal_edge_margin"
-            android:layout_marginStart="@dimen/core_horizontal_edge_margin"
-            app:firstBaselineToTopHeight="28dp"
-            app:lastBaselineToBottomHeight="4dp"
+            android:layout_marginEnd="@dimen/core_grid_edge_margin"
+            android:layout_marginStart="@dimen/core_grid_edge_margin"
+            android:layout_marginTop="8dp"
             android:ellipsize="end"
             android:maxLines="1"
-            android:textAppearance="?textAppearanceSubtitle1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/band_guideline"
@@ -69,14 +68,13 @@
 
         <TextView
             android:id="@+id/subtitle_view"
+            style="@style/Text.Odeon.Caption"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginEnd="@dimen/core_horizontal_edge_margin"
-            android:layout_marginStart="@dimen/core_horizontal_edge_margin"
+            android:layout_marginEnd="@dimen/core_grid_edge_margin"
+            android:layout_marginStart="@dimen/core_grid_edge_margin"
             android:ellipsize="end"
             android:maxLines="1"
-            android:textAppearance="?textAppearanceCaption"
-            app:firstBaselineToTopHeight="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/subtitle"

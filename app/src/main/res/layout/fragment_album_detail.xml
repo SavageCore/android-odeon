@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  ~ Copyright 2019 Thibault Seisel
+  ~ Copyright 2020 Thibault Seisel
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -70,29 +70,29 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:orientation="vertical"
-            android:paddingStart="@dimen/core_larger_horizontal_edge_margin"
-            android:paddingEnd="@dimen/core_larger_horizontal_edge_margin"
+            android:paddingStart="@dimen/core_grid_larger_edge_margin"
+            android:paddingEnd="@dimen/core_grid_larger_edge_margin"
             android:paddingTop="32dp"
             android:paddingBottom="32dp"
             android:theme="@style/ThemeOverlay.AppCompat.Light">
 
             <TextView
                 android:id="@+id/title_view"
+                style="@style/Text.Odeon.Headline5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
                 android:maxLines="1"
-                android:textAppearance="?textAppearanceHeadline5"
                 android:textColor="?albumPaletteTitleTextColor"
                 tools:text="@sample/albums.json/data/title[1]"/>
 
             <TextView
                 android:id="@+id/subtitle_view"
+                style="@style/Text.Odeon.Subtitle1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
                 android:maxLines="1"
-                android:textAppearance="?textAppearanceSubtitle1"
                 android:textColor="?albumPaletteBodyTextColor"
                 tools:text="@sample/albums.json/data/artist[1]"/>
         </LinearLayout>

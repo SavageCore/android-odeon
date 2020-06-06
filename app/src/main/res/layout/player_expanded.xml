@@ -48,21 +48,20 @@
 
     <TextView
         android:id="@+id/now_playing_position"
+        style="@style/Text.Odeon.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:textAppearance="?textAppearanceOverline"
-        android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@id/now_playing_progress"
         app:layout_constraintStart_toStartOf="@id/now_playing_progress"
         tools:text="00:00" />
 
     <TextView
         android:id="@+id/now_playing_duration"
+        style="@style/Text.Odeon.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:textAppearance="?textAppearanceOverline"
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@id/now_playing_progress"
         app:layout_constraintEnd_toEndOf="@id/now_playing_progress"
@@ -70,12 +69,12 @@
 
     <TextView
         android:id="@+id/now_playing_title"
+        style="@style/Text.Odeon.Headline5"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ellipsize="end"
         android:gravity="center"
         android:maxLines="2"
-        android:textAppearance="?textAppearanceHeadline5"
         app:layout_constraintBottom_toTopOf="@id/master_play_pause"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -60,12 +60,12 @@
 
         <TextView
             android:id="@+id/now_playing_title"
+            style="@style/Text.Odeon.Subtitle1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginStart="16dp"
             android:ellipsize="end"
             android:maxLines="1"
-            android:textAppearance="?textAppearanceSubtitle1"
             app:layout_constraintTop_toBottomOf="@id/now_playing_progress"
             app:layout_constraintEnd_toStartOf="@id/now_playing_toggle"
             app:layout_constraintStart_toEndOf="@id/now_playing_artwork"

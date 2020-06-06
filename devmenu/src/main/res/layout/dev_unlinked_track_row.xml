@@ -22,18 +22,17 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:minHeight="72dp"
-    android:paddingStart="@dimen/core_horizontal_edge_margin"
-    android:paddingEnd="@dimen/core_horizontal_edge_margin">
+    android:paddingStart="@dimen/core_grid_edge_margin"
+    android:paddingEnd="@dimen/core_grid_edge_margin">
 
     <TextView
         android:id="@+id/track_title"
+        style="@style/Text.Odeon.Subtitle1"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:ellipsize="end"
-        android:maxLines="1"
-        android:textAppearance="?textAppearanceListItem"
-        app:firstBaselineToTopHeight="32dp"
-        app:lastBaselineToBottomHeight="4dp"
+        android:maxLines="2"
+        android:layout_marginTop="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -41,12 +40,13 @@
 
     <TextView
         android:id="@+id/track_artist"
+        style="@style/Text.Odeon.Caption"
         android:layout_width="0dp"
         android:layout_height="match_parent"
+        android:layout_marginBottom="12dp"
         android:ellipsize="end"
         android:maxLines="1"
-        android:textAppearance="?textAppearanceListItemSecondary"
-        app:firstBaselineToTopHeight="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/track_title"

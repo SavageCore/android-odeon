@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  ~ Copyright 2018 Thibault Seisel
+  ~ Copyright 2020 Thibault Seisel
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -36,13 +36,13 @@
 
     <TextView
         android:id="@+id/title_view"
+        style="@style/Text.Odeon.Subtitle1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
         android:ellipsize="end"
         android:maxLines="1"
-        android:textAppearance="?textAppearanceSubtitle1"
         app:layout_constraintBottom_toTopOf="@+id/subtitle_view"
         app:layout_constraintEnd_toStartOf="@+id/play_pause_button"
         app:layout_constraintStart_toEndOf="@+id/chevron"
@@ -52,14 +52,13 @@
 
     <TextView
         android:id="@+id/subtitle_view"
+        style="@style/Text.Odeon.Caption"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
         android:ellipsize="end"
         android:maxLines="1"
-        android:textAppearance="?textAppearanceCaption"
-        android:textColor="?android:attr/textColorTertiary"
         app:layout_constraintBottom_toTopOf="@+id/top_guideline"
         app:layout_constraintEnd_toStartOf="@+id/play_pause_button"
         app:layout_constraintStart_toEndOf="@id/chevron"
@@ -70,7 +69,7 @@
         android:id="@+id/play_pause_button"
         android:layout_width="40dp"
         android:layout_height="0dp"
-        android:layout_marginEnd="@dimen/core_horizontal_edge_margin"
+        android:layout_marginEnd="@dimen/core_grid_edge_margin"
         android:background="?selectableItemBackgroundBorderless"
         android:contentDescription="@string/play_or_pause"
         android:padding="8dp"

@@ -59,4 +59,70 @@
 
     <style name="Widget.Odeon.Grid" parent="Widget.Odeon.ScrollingView"/>
 
+    <style name="Text.Odeon.Headline3" parent="android:Widget.TextView">
+        <item name="android:textAppearance">@style/TextAppearance.Odeon.Headline3</item>
+        <item name="firstBaselineToTopHeight">52sp</item>
+        <item name="lastBaselineToBottomHeight">16sp</item>
+    </style>
+
+    <style name="Text.Odeon.Headline4" parent="android:Widget.TextView">
+        <item name="android:textAppearance">@style/TextAppearance.Odeon.Headline4</item>
+        <item name="firstBaselineToTopHeight">36sp</item>
+        <item name="lastBaselineToBottomHeight">12sp</item>
+    </style>
+
+    <style name="Text.Odeon.Headline5" parent="android:Widget.TextView">
+        <item name="android:textAppearance">@style/TextAppearance.Odeon.Headline5</item>
+        <item name="firstBaselineToTopHeight">28sp</item>
+        <item name="lastBaselineToBottomHeight">8sp</item>
+    </style>
+
+    <style name="Text.Odeon.Headline6" parent="android:Widget.TextView">
+        <item name="android:textAppearance">@style/TextAppearance.Odeon.Headline6</item>
+        <item name="firstBaselineToTopHeight">24sp</item>
+        <item name="lastBaselineToBottomHeight">8sp</item>
+    </style>
+
+    <style name="Text.Odeon.Subtitle1" parent="android:Widget.TextView">
+        <item name="android:textAppearance">@style/TextAppearance.Odeon.Subtitle1</item>
+        <item name="firstBaselineToTopHeight">20sp</item>
+        <item name="lastBaselineToBottomHeight">8sp</item>
+    </style>
+
+    <style name="Text.Odeon.Subtitle2" parent="android:Widget.TextView">
+        <item name="android:textAppearance">@style/TextAppearance.Odeon.Subtitle2</item>
+        <item name="firstBaselineToTopHeight">16sp</item>
+        <item name="lastBaselineToBottomHeight">4sp</item>
+    </style>
+
+    <style name="Text.Odeon.Button" parent="android:Widget.TextView">
+        <item name="android:textAppearance">@style/TextAppearance.Odeon.Button</item>
+        <item name="firstBaselineToTopHeight">16sp</item>
+        <item name="lastBaselineToBottomHeight">4sp</item>
+    </style>
+
+    <style name="Text.Odeon.Body1" parent="android:Widget.TextView">
+        <item name="android:textAppearance">@style/TextAppearance.Odeon.Body1</item>
+        <item name="firstBaselineToTopHeight">20sp</item>
+        <item name="lastBaselineToBottomHeight">8sp</item>
+    </style>
+
+    <style name="Text.Odeon.Body2" parent="android:Widget.TextView">
+        <item name="android:textAppearance">@style/TextAppearance.Odeon.Body2</item>
+        <item name="firstBaselineToTopHeight">16sp</item>
+        <item name="lastBaselineToBottomHeight">4sp</item>
+    </style>
+
+    <style name="Text.Odeon.Caption" parent="android:Widget.TextView">
+        <item name="android:textAppearance">@style/TextAppearance.Odeon.Caption</item>
+        <item name="firstBaselineToTopHeight">12sp</item>
+        <item name="lastBaselineToBottomHeight">4sp</item>
+    </style>
+
+    <style name="Text.Odeon.Overline" parent="android:Widget.TextView">
+        <item name="android:textAppearance">@style/TextAppearance.Odeon.Overline</item>
+        <item name="firstBaselineToTopHeight">12sp</item>
+        <item name="lastBaselineToBottomHeight">4sp</item>
+    </style>
+
 </resources>

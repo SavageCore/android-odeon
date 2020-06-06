@@ -25,36 +25,37 @@
         android:id="@+id/content_root"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="@dimen/core_horizontal_edge_margin">
+        android:padding="@dimen/core_grid_edge_margin">
 
         <TextView
             android:id="@+id/label_tempo"
+            style="@style/Text.Odeon.Body1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:text="@string/dev_label_tempo"
-            android:textAppearance="?textAppearanceBody1"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/label_energy"
+            style="@style/Text.Odeon.Body1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:text="@string/dev_label_energy"
-            android:textAppearance="?textAppearanceBody1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/label_tempo" />
 
         <TextView
             android:id="@+id/label_danceability"
+            style="@style/Text.Odeon.Body1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:text="@string/dev_label_danceability"
-            android:textAppearance="?textAppearanceBody1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/label_energy" />
 
         <TextView
             android:id="@+id/label_valence"
+            style="@style/Text.Odeon.Body1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:text="@string/dev_label_valence"
@@ -72,40 +73,40 @@
 
         <TextView
             android:id="@+id/min_tempo"
+            style="@style/Text.Odeon.Body2"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginStart="16dp"
-            android:textAppearance="?textAppearanceBody2"
             app:layout_constraintBaseline_toBaselineOf="@id/label_tempo"
             app:layout_constraintStart_toEndOf="@id/barrier_labels"
             tools:text="62.11" />
 
         <TextView
             android:id="@+id/min_energy"
+            style="@style/Text.Odeon.Body2"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginStart="16dp"
-            android:textAppearance="?textAppearanceBody2"
             app:layout_constraintBaseline_toBaselineOf="@id/label_energy"
             app:layout_constraintStart_toEndOf="@id/barrier_labels"
             tools:text="45.89%" />
 
         <TextView
             android:id="@+id/min_danceability"
+            style="@style/Text.Odeon.Body2"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginStart="16dp"
-            android:textAppearance="?textAppearanceBody2"
             app:layout_constraintBaseline_toBaselineOf="@id/label_danceability"
             app:layout_constraintStart_toEndOf="@id/barrier_labels"
             tools:text="11.47%" />
 
         <TextView
             android:id="@+id/min_valence"
+            style="@style/Text.Odeon.Body2"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginStart="16dp"
-            android:textAppearance="?textAppearanceBody2"
             app:layout_constraintBaseline_toBaselineOf="@id/label_valence"
             app:layout_constraintStart_toEndOf="@id/barrier_labels"
             tools:text="12.6%" />
@@ -119,40 +120,40 @@
 
         <TextView
             android:id="@+id/med_tempo"
+            style="@style/Text.Odeon.Body2"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginStart="16dp"
-            android:textAppearance="?textAppearanceBody2"
             app:layout_constraintBaseline_toBaselineOf="@id/label_tempo"
             app:layout_constraintStart_toEndOf="@id/barrier_min"
             tools:text="120.00" />
 
         <TextView
             android:id="@+id/med_energy"
+            style="@style/Text.Odeon.Body2"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginStart="16dp"
-            android:textAppearance="?textAppearanceBody2"
             app:layout_constraintBaseline_toBaselineOf="@id/label_energy"
             app:layout_constraintStart_toEndOf="@id/barrier_min"
             tools:text="90.6%" />
 
         <TextView
             android:id="@+id/med_danceability"
+            style="@style/Text.Odeon.Body2"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginStart="16dp"
-            android:textAppearance="?textAppearanceBody2"
             app:layout_constraintBaseline_toBaselineOf="@id/label_danceability"
             app:layout_constraintStart_toEndOf="@id/barrier_min"
             tools:text="52.13%" />
 
         <TextView
             android:id="@+id/med_valence"
+            style="@style/Text.Odeon.Body2"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginStart="16dp"
-            android:textAppearance="?textAppearanceBody2"
             app:layout_constraintBaseline_toBaselineOf="@id/label_valence"
             app:layout_constraintStart_toEndOf="@id/barrier_min"
             tools:text="42.90%" />
@@ -166,40 +167,40 @@
 
         <TextView
             android:id="@+id/max_tempo"
+            style="@style/Text.Odeon.Body2"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginStart="16dp"
-            android:textAppearance="?textAppearanceBody2"
             app:layout_constraintBaseline_toBaselineOf="@id/label_tempo"
             app:layout_constraintStart_toEndOf="@id/barrier_med"
             tools:text="210" />
 
         <TextView
             android:id="@+id/max_energy"
+            style="@style/Text.Odeon.Body2"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginStart="16dp"
-            android:textAppearance="?textAppearanceBody2"
             app:layout_constraintBaseline_toBaselineOf="@id/label_energy"
             app:layout_constraintStart_toEndOf="@id/barrier_med"
             tools:text="99.85%" />
 
         <TextView
             android:id="@+id/max_danceability"
+            style="@style/Text.Odeon.Body2"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginStart="16dp"
-            android:textAppearance="?textAppearanceBody2"
             app:layout_constraintBaseline_toBaselineOf="@id/label_danceability"
             app:layout_constraintStart_toEndOf="@id/barrier_med"
             tools:text="82.79%" />
 
         <TextView
             android:id="@+id/max_valence"
+            style="@style/Text.Odeon.Body2"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginStart="16dp"
-            android:textAppearance="?textAppearanceBody2"
             app:layout_constraintBaseline_toBaselineOf="@id/label_valence"
             app:layout_constraintStart_toEndOf="@id/barrier_med"
             tools:text="95.1%" />

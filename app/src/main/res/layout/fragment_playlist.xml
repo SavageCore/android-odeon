@@ -1,5 +1,5 @@
 <!--
-  ~ Copyright 2018 Thibault Seisel
+  ~ Copyright 2020 Thibault Seisel
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -58,10 +58,10 @@
 
     <TextView
         android:id="@+id/empty_label"
+        style="@style/Text.Odeon.Headline5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/empty_playlist"
-        android:textAppearance="?textAppearanceHeadline5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"

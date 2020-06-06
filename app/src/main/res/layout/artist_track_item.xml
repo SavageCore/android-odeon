@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  ~ Copyright 2018 Thibault Seisel
+  ~ Copyright 2020 Thibault Seisel
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -21,8 +21,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="56dp"
-    android:paddingStart="@dimen/core_horizontal_edge_margin"
-    android:paddingEnd="@dimen/core_horizontal_edge_margin"
+    android:paddingStart="@dimen/core_grid_edge_margin"
+    android:paddingEnd="@dimen/core_grid_edge_margin"
     android:background="?attr/selectableItemBackground"
     android:textDirection="locale">
 
@@ -31,7 +31,7 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginStart="@dimen/core_horizontal_edge_margin"
+        android:layout_marginStart="@dimen/core_grid_edge_margin"
         android:layout_marginTop="8dp"
         android:contentDescription="@string/album_art"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -41,13 +41,13 @@
 
     <TextView
         android:id="@+id/title"
+        style="@style/Text.Odeon.Subtitle1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
         android:ellipsize="end"
         android:maxLines="1"
-        android:textAppearance="?textAppearanceSubtitle1"
         app:layout_constrainedWidth="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/duration"
@@ -58,12 +58,12 @@
 
     <TextView
         android:id="@+id/duration"
+        style="@style/Text.Odeon.Caption"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/core_horizontal_edge_margin"
+        android:layout_marginEnd="@dimen/core_grid_edge_margin"
         android:ellipsize="end"
         android:maxLines="1"
-        android:textAppearance="?textAppearanceCaption"
         app:layout_constraintBaseline_toBaselineOf="@id/title"
         app:layout_constraintEnd_toEndOf="parent"
         tools:text="@sample/songs.json/data/duration"/>

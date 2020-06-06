@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  ~ Copyright 2018 Thibault Seisel
+  ~ Copyright 2020 Thibault Seisel
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -15,12 +15,11 @@
   ~ limitations under the License.
   -->
 
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="56dp"
+    android:layout_height="wrap_content"
     android:background="?attr/selectableItemBackground"
     android:textDirection="locale">
 
@@ -28,68 +27,71 @@
         android:id="@+id/play_indicator"
         android:layout_width="24dp"
         android:layout_height="24dp"
+        android:layout_marginStart="@dimen/core_grid_edge_margin"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="@dimen/core_grid_gutter"
         android:layout_marginBottom="16dp"
-        android:layout_marginStart="@dimen/core_larger_horizontal_edge_margin"
         android:contentDescription="@null"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/text_start_guideline"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/currently_playing_decoration"
-        tools:visibility="visible"/>
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/track_no"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginBottom="16dp"
-        android:textAlignment="center"
-        android:textAppearance="?textAppearanceButton"
+        style="@style/Text.Odeon.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/core_grid_edge_margin"
+        android:layout_marginEnd="@dimen/core_grid_gutter"
+        android:gravity="center"
+        android:textColor="?android:textColorTertiary"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/text_start_guideline"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="@sample/songs.json/data/trackNo"/>
+        tools:text="@sample/songs.json/data/trackNo" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/text_start_guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="72dp"/>
+        app:layout_constraintGuide_begin="72dp" />
 
     <TextView
         android:id="@+id/title"
+        style="@style/Text.Odeon.Subtitle1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="@dimen/core_grid_gutter"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="@dimen/core_grid_gutter"
+        android:layout_marginBottom="16dp"
         android:ellipsize="end"
-        android:maxLines="1"
-        android:textAppearance="?textAppearanceSubtitle1"
+        android:maxLines="2"
         app:layout_constrainedWidth="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/duration"
         app:layout_constraintHorizontal_bias="0"
         app:layout_constraintStart_toEndOf="@id/text_start_guideline"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="@sample/songs.json/data/title"/>
+        tools:text="@sample/songs.json/data/title" />
 
     <TextView
         android:id="@+id/duration"
+        style="@style/Text.Odeon.Caption"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/core_horizontal_edge_margin"
-        android:layout_marginStart="16dp"
-        android:ellipsize="end"
-        android:maxLines="1"
-        android:textAppearance="?textAppearanceCaption"
+        android:layout_marginStart="@dimen/core_grid_gutter"
+        android:layout_marginEnd="@dimen/core_grid_edge_margin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="@sample/songs.json/data/duration"/>
+        tools:text="@sample/songs.json/data/duration" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -16,10 +16,6 @@
   -->
 
 <resources>
-    <dimen name="core_grid_edge_margin">16dp</dimen>
-    <dimen name="core_grid_gutter">16dp</dimen>
-    <dimen name="core_grid_larger_edge_margin">32dp</dimen>
-    <dimen name="core_card_max_elevation">8dp</dimen>
-    <dimen name="core_shape_corner_radius">8dp</dimen>
-    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="core_grid_edge_margin">24dp</dimen>
+    <dimen name="core_grid_gutter">24dp</dimen>
 </resources>
