@@ -42,7 +42,7 @@ ext.versions = [
         'glide'         : '4.11.0',
         'kdenticon'     : '1.0.0-alpha5',
         'ktor'          : '1.4.0',
-        'material'      : '1.1.0',
+        'material'      : '1.2.0',
         'moshi'         : '1.10.0',
         'timber'        : '4.7.1',
 
