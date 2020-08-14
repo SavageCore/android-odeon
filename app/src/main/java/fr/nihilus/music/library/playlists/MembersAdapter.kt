@@ -16,29 +16,19 @@
 
 package fr.nihilus.music.library.playlists
 
-import android.graphics.Bitmap
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
-import com.bumptech.glide.RequestBuilder
 import fr.nihilus.music.R
 import fr.nihilus.music.core.ui.base.BaseAdapter
-import fr.nihilus.music.glide.roundedCorners
 
 internal class MembersAdapter(
     fragment: Fragment,
     private val listener: OnItemSelectedListener
 ) : BaseAdapter<MembersHolder>() {
 
-    private val glideRequest: RequestBuilder<Bitmap>
-
-    init {
-        val context = fragment.requireContext()
-        val cornerRadius = context.resources.getDimensionPixelSize(R.dimen.track_icon_corner_radius)
-        glideRequest = Glide.with(fragment).asBitmap()
-            .roundedCorners(cornerRadius)
-            .fallback(R.drawable.ic_audiotrack_24dp)
-    }
+    private val glideRequest = Glide.with(fragment).asBitmap()
+        .fallback(R.drawable.ic_audiotrack_24dp)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MembersHolder =
         MembersHolder(parent, glideRequest).also { holder ->
