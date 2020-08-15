@@ -14,7 +14,7 @@
   ~ limitations under the License.
   -->
 
-<selector xmlns:android="http://schemas.android.com/apk/res/android" android:enterFadeDuration="@integer/default_animation_duration" android:exitFadeDuration="@integer/default_animation_duration">
+<selector xmlns:android="http://schemas.android.com/apk/res/android" android:enterFadeDuration="@integer/motion_duration_medium" android:exitFadeDuration="@integer/motion_duration_medium">
     <item android:state_activated="true">
         <color android:color="?colorControlHighlight" />
     </item>

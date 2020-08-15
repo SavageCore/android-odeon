@@ -27,6 +27,9 @@ import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import androidx.transition.Transition
+import androidx.transition.TransitionListenerAdapter
+import com.google.android.material.transition.MaterialSharedAxis
 import fr.nihilus.music.R
 import fr.nihilus.music.core.media.MediaId
 import fr.nihilus.music.core.media.toMediaId
@@ -41,8 +44,25 @@ class SearchFragment : BaseFragment(R.layout.fragment_search) {
         requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
     }
 
-    private val backToTopObserver =  BackToTopObserver()
+    private val backToTopObserver = BackToTopObserver()
     private lateinit var resultsAdapter: SearchResultsAdapter
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        val largeTransitionDuration = resources.getInteger(R.integer.motion_duration_large).toLong()
+        enterTransition = MaterialSharedAxis(MaterialSharedAxis.Z, true).apply {
+            duration = largeTransitionDuration
+            addListener(object : TransitionListenerAdapter() {
+                override fun onTransitionEnd(transition: Transition) {
+                    showKeyboard(search_input)
+                }
+            })
+        }
+        returnTransition = MaterialSharedAxis(MaterialSharedAxis.Z, false).apply {
+            duration = largeTransitionDuration
+        }
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -74,10 +94,6 @@ class SearchFragment : BaseFragment(R.layout.fragment_search) {
 
         viewModel.searchResults.observe(viewLifecycleOwner) { searchResults ->
             resultsAdapter.submitList(searchResults)
-        }
-
-        if (savedInstanceState == null) {
-            showKeyboard(search_input)
         }
     }
 

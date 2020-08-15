@@ -16,5 +16,7 @@
   -->
 
 <resources>
-    <integer name="default_animation_duration">220</integer>
+    <integer name="motion_duration_small">175</integer>
+    <integer name="motion_duration_medium">225</integer>
+    <integer name="motion_duration_large">300</integer>
 </resources>

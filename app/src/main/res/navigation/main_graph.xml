@@ -91,7 +91,7 @@
             android:id="@+id/start_cleanup"
             app:destination="@id/activity_cleanup" />
         <action
-            android:id="@+id/action_fragment_home_to_searchFragment"
+            android:id="@+id/move_to_search_screen"
             app:destination="@id/fragment_search" />
     </fragment>
 

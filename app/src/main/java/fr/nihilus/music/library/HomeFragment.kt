@@ -26,8 +26,11 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.onNavDestinationSelected
+import androidx.transition.Transition
+import androidx.transition.TransitionListenerAdapter
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.google.android.material.tabs.TabLayoutMediator
+import com.google.android.material.transition.MaterialSharedAxis
 import fr.nihilus.music.R
 import fr.nihilus.music.core.ui.base.BaseFragment
 import fr.nihilus.music.library.albums.AlbumGridFragment
@@ -85,19 +88,36 @@ class HomeFragment : BaseFragment(R.layout.fragment_home) {
         setOnMenuItemClickListener(::onOptionsItemSelected)
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.onNavDestinationSelected(findNavController())) {
-            return true
+    override fun onOptionsItemSelected(item: MenuItem): Boolean = when (item.itemId) {
+        R.id.action_shuffle -> {
+            viewModel.playAllShuffled()
+            true
         }
 
-        return when (item.itemId) {
-            R.id.action_shuffle -> {
-                viewModel.playAllShuffled()
-                true
-            }
+        R.id.fragment_search -> navigateToSearchFragment()
 
-            else -> super.onOptionsItemSelected(item)
+        else -> item.onNavDestinationSelected(findNavController()) ||
+                super.onOptionsItemSelected(item)
+    }
+
+    private fun navigateToSearchFragment(): Boolean {
+        val largeMotionDuration = resources.getInteger(R.integer.motion_duration_large).toLong()
+        exitTransition = MaterialSharedAxis(MaterialSharedAxis.Z, false).apply {
+            duration = largeMotionDuration
         }
+        reenterTransition = MaterialSharedAxis(MaterialSharedAxis.Z, true).apply {
+            duration = largeMotionDuration
+            addListener(object : TransitionListenerAdapter() {
+                override fun onTransitionEnd(transition: Transition) {
+                    exitTransition = null
+                    reenterTransition = null
+                }
+            })
+        }
+
+        val toSearchScreen = HomeFragmentDirections.moveToSearchScreen()
+        findNavController().navigate(toSearchScreen)
+        return true
     }
 
     /**
