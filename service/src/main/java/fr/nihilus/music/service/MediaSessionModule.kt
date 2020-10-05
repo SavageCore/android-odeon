@@ -24,6 +24,7 @@ import com.google.android.exoplayer2.util.ErrorMessageProvider
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
+import fr.nihilus.music.core.ACTION_PLAYER_UI
 import fr.nihilus.music.service.playback.ErrorHandler
 import fr.nihilus.music.service.playback.MediaQueueManager
 import fr.nihilus.music.service.playback.OdeonPlaybackPreparer
@@ -52,7 +53,7 @@ internal abstract class MediaSessionModule {
         fun providesMediaSession(service: MusicService): MediaSessionCompat {
             val sessionActivityPendingIntent =
                 service.packageManager.getLaunchIntentForPackage(service.packageName)?.let { sessionIntent ->
-                    sessionIntent.action = MusicService.ACTION_PLAYER_UI
+                    sessionIntent.action = ACTION_PLAYER_UI
                     PendingIntent.getActivity(service, 0, sessionIntent, 0)
                 }
 

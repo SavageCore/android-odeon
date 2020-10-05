@@ -19,8 +19,8 @@ package fr.nihilus.music.dagger
 import dagger.Module
 import fr.nihilus.music.core.ui.dagger.CoreUiModule
 import fr.nihilus.music.core.ui.viewmodel.ViewModelModule
-import fr.nihilus.music.library.HomeModule
 import fr.nihilus.music.ui.cleanup.CleanupModule
+import fr.nihilus.music.ui.library.HomeModule
 import fr.nihilus.music.ui.settings.SettingsModule
 
 /**

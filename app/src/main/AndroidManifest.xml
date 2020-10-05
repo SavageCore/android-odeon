@@ -30,11 +30,14 @@
         android:supportsRtl="true"
         android:theme="@style/Odeon">
 
-        <!-- Main activity for music browsing. -->
+        <!--
+            The activity that serves as the main entry-point for the application.
+            Intents filters that are specific to the launcher activity are specified here
+            without overwriting the original activity definition.
+            -->
         <activity
-            android:name=".HomeActivity"
-            android:launchMode="singleTop"
-            android:theme="@style/Odeon.NoActionBar">
+            android:name=".ui.library.HomeActivity"
+            tools:node="merge">
 
             <!-- Make this Activity visible in launcher -->
             <intent-filter>
@@ -58,7 +61,7 @@
                 <data
                     android:host="github.com"
                     android:path="/thibseisel/android-odeon"
-                    android:scheme="http"/>
+                    android:scheme="http" />
             </intent-filter>
 
             <intent-filter>
@@ -70,7 +73,7 @@
                 <data
                     android:host="github.com"
                     android:path="/thibseisel/android-odeon"
-                    android:scheme="https"/>
+                    android:scheme="https" />
             </intent-filter>
         </activity>
 

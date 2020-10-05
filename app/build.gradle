@@ -16,9 +16,7 @@
 
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
-apply plugin: 'androidx.navigation.safeargs.kotlin'
 
 android {
     compileSdkVersion rootProject.compileSdkVersion
@@ -88,10 +86,10 @@ android {
          * The main intent is to test the app in debug mode but with its code obfuscated
          * since it could fail unexpectedly.
          */
-        beta {
+        staging {
             initWith buildTypes.debug
 
-            versionNameSuffix = '-beta'
+            versionNameSuffix = '-staging'
             applicationIdSuffix = '.debug'
 
             // Unlike release builds, keep the app debuggable.
@@ -105,10 +103,6 @@ android {
     }
 }
 
-androidExtensions {
-    experimental = true
-}
-
 dependencies {
     // Sub-project containing the Media Service.
     implementation project(':core')
@@ -117,6 +111,7 @@ dependencies {
     implementation project(':service')
     implementation project(':spotify-client')
 
+    implementation project(':ui-library')
     implementation project(':ui-cleanup')
     implementation project(':ui-settings')
 
@@ -129,15 +124,4 @@ dependencies {
     // Dagger
     kapt "com.google.dagger:dagger-compiler:${versions.dagger}"
     kapt "com.google.dagger:dagger-android-processor:${versions.dagger}"
-
-    // Test dependencies
-    testImplementation project(':core-test')
-    testImplementation "androidx.test:rules:${versions.androidx.test}"
-    testImplementation "androidx.test.ext:junit-ktx:${versions.androidx.ext_junit}"
-    testImplementation "org.robolectric:robolectric:${versions.robolectric}"
-
-    androidTestImplementation "androidx.test:core:${versions.androidx.test}"
-    androidTestImplementation "androidx.test:rules:${versions.androidx.test}"
-    androidTestImplementation "androidx.test:runner:${versions.androidx.test}"
-    androidTestImplementation "androidx.test.espresso:espresso-core:${versions.androidx.espresso}"
 }

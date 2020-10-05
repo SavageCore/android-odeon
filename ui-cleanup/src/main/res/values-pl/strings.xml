@@ -19,5 +19,4 @@
     <string name="never_played">Nigdy nie odtwarzane</string>
     <string name="last_played_description">Ostatnio odtwarzane %1$s</string>
     <string name="cleanup_confirmation_message">Tego działania nie można cofnąć.</string>
-    <string name="action_cleanup_title">Zwolnij miejsce na dysku</string>
 </resources>

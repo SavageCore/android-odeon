@@ -21,7 +21,7 @@
         <!-- Activity for selecting tracks to be deleted to free-up space. -->
         <activity
             android:name="fr.nihilus.music.ui.cleanup.CleanupActivity"
-            android:label="@string/action_cleanup_title"
+            android:label="@string/core_action_cleanup_title"
             android:theme="@style/Odeon.Immersive" />
     </application>
 </manifest>

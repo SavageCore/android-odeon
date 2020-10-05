@@ -22,12 +22,12 @@ import android.net.Uri
 import android.support.v4.media.MediaMetadataCompat
 import androidx.core.net.toUri
 import androidx.test.ext.junit.runners.AndroidJUnit4
+import fr.nihilus.music.core.extensions.*
 import fr.nihilus.music.core.media.MediaId
 import fr.nihilus.music.core.media.MediaId.Builder.CATEGORY_ALL
 import fr.nihilus.music.core.media.MediaId.Builder.TYPE_TRACKS
 import fr.nihilus.music.core.media.MediaId.Builder.encode
 import fr.nihilus.music.service.AudioTrack
-import fr.nihilus.music.service.extensions.*
 import io.kotest.assertions.assertSoftly
 import io.kotest.matchers.channels.shouldBeEmpty
 import io.kotest.matchers.nulls.shouldNotBeNull

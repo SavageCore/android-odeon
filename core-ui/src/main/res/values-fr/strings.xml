@@ -20,4 +20,5 @@
     <string name="core_cancel">Annuler</string>
     <string name="core_action_delete">Supprimer</string>
     <string name="core_action_settings">Paramètres</string>
+    <string name="core_action_cleanup_title">Libérer de l\'espace</string>
 </resources>

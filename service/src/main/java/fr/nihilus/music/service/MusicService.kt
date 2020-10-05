@@ -56,14 +56,6 @@ import javax.inject.Inject
 
 class MusicService : BaseBrowserService() {
 
-    companion object {
-        /**
-         * The name of an [intent action][Intent.getAction] for launching the activity
-         * associated with the media session and display the UI for controlling media playback.
-         */
-        const val ACTION_PLAYER_UI = "fr.nihilus.music.media.action.PLAYER_UI"
-    }
-
     @Inject internal lateinit var dispatchers: AppDispatchers
     @Inject internal lateinit var browserTree: BrowserTree
     @Inject internal lateinit var subscriptions: SubscriptionManager

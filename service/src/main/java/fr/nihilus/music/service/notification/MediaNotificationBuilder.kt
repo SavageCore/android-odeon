@@ -29,10 +29,10 @@ import androidx.annotation.RequiresApi
 import androidx.core.app.NotificationCompat
 import androidx.media.app.NotificationCompat.MediaStyle
 import androidx.media.session.MediaButtonReceiver
+import fr.nihilus.music.core.extensions.*
 import fr.nihilus.music.service.MusicService
 import fr.nihilus.music.service.R
 import fr.nihilus.music.service.ServiceScoped
-import fr.nihilus.music.service.extensions.*
 import javax.inject.Inject
 
 private const val NOW_PLAYING_CHANNEL = "fr.nihilus.music.media.NOW_PLAYING"

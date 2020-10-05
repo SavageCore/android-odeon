@@ -33,7 +33,7 @@
             android:layout_height="?actionBarSize"
             android:theme="?actionBarTheme"
             app:popupTheme="?actionBarPopupTheme"
-            tools:title="@string/action_cleanup_title" />
+            tools:title="@string/core_action_cleanup_title" />
     </com.google.android.material.appbar.AppBarLayout>
 
     <fragment
