@@ -96,4 +96,10 @@
         <item name="android:navigationBarColor">@color/nav_bar_background</item>
     </style>
 
+    <!-- ThemeOverlay to swap primary with secondary color. -->
+    <style name="ThemeOverlay.Odeon.PrimarySecondary" parent="">
+        <item name="colorPrimary">?colorSecondary</item>
+        <item name="colorOnPrimary">?colorOnSecondary</item>
+    </style>
+
 </resources>

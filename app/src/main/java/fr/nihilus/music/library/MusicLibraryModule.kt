@@ -22,6 +22,7 @@ import dagger.Module
 import dagger.android.ContributesAndroidInjector
 import dagger.multibindings.IntoMap
 import fr.nihilus.music.core.ui.viewmodel.ViewModelKey
+import fr.nihilus.music.library.permission.MissingPermissionFragment
 
 @Module
 abstract class MusicLibraryModule {
@@ -32,4 +33,7 @@ abstract class MusicLibraryModule {
     @Binds @IntoMap
     @ViewModelKey(HomeViewModel::class)
     abstract fun bindsHomeViewModel(viewModel: HomeViewModel): ViewModel
+
+    @ContributesAndroidInjector
+    internal abstract fun missingPermissionFragment(): MissingPermissionFragment
 }

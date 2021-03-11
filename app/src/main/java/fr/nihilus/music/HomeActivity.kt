@@ -18,29 +18,26 @@ package fr.nihilus.music
 
 import android.Manifest
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import fr.nihilus.music.core.os.RuntimePermissions
-import fr.nihilus.music.core.ui.ConfirmDialogFragment
 import fr.nihilus.music.core.ui.base.BaseActivity
 import fr.nihilus.music.databinding.ActivityHomeBinding
 import fr.nihilus.music.library.MusicLibraryViewModel
 import fr.nihilus.music.library.nowplaying.NowPlayingFragment
 import fr.nihilus.music.service.MusicService
-import fr.nihilus.music.ui.EXTERNAL_STORAGE_REQUEST
-import fr.nihilus.music.ui.requestExternalStoragePermission
 import timber.log.Timber
 import javax.inject.Inject
 
 class HomeActivity : BaseActivity() {
 
-    @Inject lateinit var permissions: RuntimePermissions
+    @Inject internal lateinit var permissions: RuntimePermissions
 
     private val viewModel: MusicLibraryViewModel by viewModels { viewModelFactory }
 
@@ -57,11 +54,8 @@ class HomeActivity : BaseActivity() {
 
         setupPlayerView()
 
-        if (savedInstanceState == null) {
-            if (permissions.canWriteToExternalStorage) {
-                // Load a fragment depending on the intent that launched that activity (shortcuts)
-                handleIntent(intent)
-            } else this.requestExternalStoragePermission()
+        if (!permissions.canWriteToExternalStorage && canExplainStoragePermission()) {
+            findNavController(R.id.nav_host_fragment).navigate(R.id.fragment_missing_permission)
         }
     }
 
@@ -87,6 +81,15 @@ class HomeActivity : BaseActivity() {
         bottomSheet.removeBottomSheetCallback(sheetCollapsingCallback)
         super.onPause()
     }
+
+    /**
+     * Whether user has not marked the external storage permission request as "Do not ask again".
+     */
+    private fun canExplainStoragePermission(): Boolean =
+        ActivityCompat.shouldShowRequestPermissionRationale(
+            this,
+            Manifest.permission.WRITE_EXTERNAL_STORAGE
+        )
 
     private fun setupPlayerView() {
         bottomSheet = BottomSheetBehavior.from(binding.playerContainer)
@@ -124,32 +127,6 @@ class HomeActivity : BaseActivity() {
     override fun onNewIntent(intent: Intent) {
         super.onNewIntent(intent)
         handleIntent(intent)
-    }
-
-    override fun onRequestPermissionsResult(
-        requestCode: Int, permissions: Array<String>,
-        grantResults: IntArray
-    ) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        if (requestCode == EXTERNAL_STORAGE_REQUEST) {
-
-            // Whether it has permission or not, load fragment into interface
-            handleIntent(intent)
-
-            // Show an informative dialog message if permission is not granted
-            // and user has not checked "Don't ask again".
-            if (grantResults[0] == PackageManager.PERMISSION_DENIED &&
-                ActivityCompat.shouldShowRequestPermissionRationale(
-                    this,
-                    Manifest.permission.WRITE_EXTERNAL_STORAGE
-                )) {
-                ConfirmDialogFragment.newInstance(
-                    null, 0,
-                    message = getString(R.string.external_storage_permission_rationale),
-                    positiveButton = R.string.core_ok
-                ).show(supportFragmentManager, null)
-            }
-        }
     }
 
     /**

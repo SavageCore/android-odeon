@@ -48,4 +48,6 @@
     <string name="description_more_actions">Więcej działań</string>
     <string name="desc_clear_search">Wyczyść wyszukiwanie</string>
     <string name="desc_play_album">Play album</string>
+    <string name="permission_request_rationale">We need your consent to access your music library.</string>
+    <string name="grant_permission">Grant permission</string>
 </resources>

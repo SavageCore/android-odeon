@@ -105,4 +105,9 @@
             android:id="@+id/browse_album_detail"
             app:destination="@id/fragment_album_detail" />
     </fragment>
+
+    <fragment
+        android:id="@+id/fragment_missing_permission"
+        android:name="fr.nihilus.music.library.permission.MissingPermissionFragment"
+        tools:layout="@layout/fragment_missing_permission" />
 </navigation>
