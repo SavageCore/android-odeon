@@ -23,7 +23,6 @@ import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.core.app.ActivityCompat
-import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import fr.nihilus.music.core.os.RuntimePermissions
@@ -47,6 +46,19 @@ class HomeActivity : BaseActivity() {
 
     private val sheetCollapsingCallback = BottomSheetCollapsingCallback()
 
+    init {
+        supportFragmentManager.addFragmentOnAttachListener { _, fragment ->
+            if (fragment is NowPlayingFragment) {
+                playerFragment = fragment
+                fragment.setOnRequestPlayerExpansionListener { shouldCollapse ->
+                    bottomSheet.state =
+                        if (shouldCollapse) BottomSheetBehavior.STATE_COLLAPSED
+                        else BottomSheetBehavior.STATE_EXPANDED
+                }
+            }
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
@@ -56,19 +68,6 @@ class HomeActivity : BaseActivity() {
 
         if (!permissions.canWriteToExternalStorage && canExplainStoragePermission()) {
             findNavController(R.id.nav_host_fragment).navigate(R.id.fragment_missing_permission)
-        }
-    }
-
-    override fun onAttachFragment(fragment: Fragment) {
-        super.onAttachFragment(fragment)
-
-        if (fragment is NowPlayingFragment) {
-            playerFragment = fragment
-            fragment.setOnRequestPlayerExpansionListener { shouldCollapse ->
-                bottomSheet.state =
-                        if (shouldCollapse) BottomSheetBehavior.STATE_COLLAPSED
-                        else BottomSheetBehavior.STATE_EXPANDED
-            }
         }
     }
 
