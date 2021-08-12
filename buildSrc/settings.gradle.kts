@@ -13,12 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-plugins {
-    id("de.fayard.refreshVersions") version "0.11.0"
+pluginManagement {
+    plugins {
+        id("de.fayard.refreshVersions") version "0.11.0"
+    }
 }
 
-rootProject.name = "android-odeon"
-include(":app")
-include(":core", ":core-test", ":core-ui", ":core-instrumentation", ":media")
-include(":service", ":spotify-client")
-include(":ui-cleanup", ":ui-settings")
+plugins {
+    id("de.fayard.refreshVersions")
+}
